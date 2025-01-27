@@ -20,7 +20,6 @@ public class DataTableSelectionPage {
         List<WebElement> names = getDriver().findElements(checkboxNames);
         for(WebElement name: names) {
             if (name.getText().equals("Blue Band")){
-//                List<WebElement> checkboxes = getDriver().findElements(By.xpath("(//table[@role='grid'])[6]//tr[3]/td[1]"));
                 getDriver().findElement(By.xpath("(//table[@role='grid'])[6]//tr[3]/td[1]")).click();
             }
         }
@@ -33,14 +32,12 @@ public class DataTableSelectionPage {
 
         for (WebElement nameElement : rows) {
             if (nameElement.getText().equals(nameToSelect)) {
-                // Dynamic XPath with the correct row index
                 getDriver().findElement(By.xpath("(//table[@role='grid'])[6]//tr[" + nameRow + "]/td[1]")).click();
-                return; // Exit after clicking the checkbox
+                return;
             }
-            nameRow++; // Increment row index
+            nameRow++;
         }
         throw new NoSuchElementException("No row found with the name: " + nameToSelect);
     }
-
 
 }
