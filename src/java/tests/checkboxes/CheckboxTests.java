@@ -16,7 +16,7 @@ public class CheckboxTests extends BrowserManager {
     }
 
     @Test
-    public void testCheckCheckboxByName(){
+    public void testCheckTheCheckboxByName(){
         dataTableSelectionPage.selectCheckboxByName("Game Controller");
     }
 }
