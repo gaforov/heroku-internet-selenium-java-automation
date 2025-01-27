@@ -1,8 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import utils.SeleniumUtils;
 
 import static base.BrowserManager.getDriver;
 
@@ -33,6 +31,11 @@ public class HomePage {
     public KeyPressesPage clickKeyPressesLink() {
         clickLink("Key Presses");
         return new KeyPressesPage();
+    }
+
+    public HorizontalSliderPage clickHorizontalSliderLink() {
+        clickLink("Horizontal Slider");
+        return new HorizontalSliderPage();
     }
 
     private void clickLink(String linkText) {

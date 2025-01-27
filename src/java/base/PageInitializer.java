@@ -1,15 +1,13 @@
 package base;
 
-import pages.DropdownPage;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.SecureAreaPage;
+import pages.*;
 
 public class PageInitializer {
     public static LoginPage loginPage;
     public static SecureAreaPage secureAreaPage;
     public static HomePage homePage;
     public static DropdownPage dropdownPage;
+    public static DataTableSelectionPage dataTableSelectionPage;
 
 
     public static void initializePage() {
@@ -17,5 +15,6 @@ public class PageInitializer {
         secureAreaPage = new SecureAreaPage();
         homePage = new HomePage();
         dropdownPage = new DropdownPage();
+        dataTableSelectionPage = new DataTableSelectionPage();
     }
 }

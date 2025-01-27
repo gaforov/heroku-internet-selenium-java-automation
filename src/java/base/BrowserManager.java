@@ -1,5 +1,6 @@
 package base;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -28,6 +29,7 @@ public class BrowserManager {
                 default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
             }
 
+            driver.manage().window().setPosition(new Point(1500, -1500));
             driver.manage().window().maximize();
             driver.get(PropertiesUtil.getProperty("base.url"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -37,7 +39,7 @@ public class BrowserManager {
         return driver;
     }
 
-    @AfterMethod(alwaysRun = true)
+//    @AfterMethod(alwaysRun = true)
     public void quitBrowser() {
         if (driver != null) {
             driver.quit();
