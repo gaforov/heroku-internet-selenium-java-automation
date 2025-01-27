@@ -4,11 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PropertyReader {
-    private static final Properties properties = new Properties();
+public class PropertiesUtil {
+    private static final Properties properties;
 
     static {
-        try (FileInputStream fileInputStream = new FileInputStream("src/main/resources/config.properties")) {
+        try {
+            FileInputStream fileInputStream = new FileInputStream("src/resources/config.properties");
+            properties = new Properties();
             properties.load(fileInputStream);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load configuration file", e);
