@@ -14,4 +14,9 @@ public class CheckboxTests extends BrowserManager {
         dataTableSelectionPage.locateRowByName();
         waitForSeconds(3);
     }
+
+    @Test
+    public void testCheckCheckboxByName(){
+        dataTableSelectionPage.selectCheckboxByName("Game Controller");
+    }
 }
