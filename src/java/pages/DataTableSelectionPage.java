@@ -11,15 +11,12 @@ import static base.BrowserManager.getDriver;
 public class DataTableSelectionPage {
     // Web Elements
     private final By checkboxNames = By.xpath("(//table[@role='grid'])[6]//tr/td[3]");
-    private final By checkboxTable = By.xpath("//h5[contains(text(), 'Checkbox')]");
-    private final By checkboxRows = By.xpath("(//table[@role='grid'])[6]//tr");
-
 
     // Methods
     public void locateRowByName(){
         List<WebElement> names = getDriver().findElements(checkboxNames);
-        for(WebElement name: names) {
-            if (name.getText().equals("Blue Band")){
+        for(WebElement nameElement: names) {
+            if (nameElement.getText().equals("Blue Band")){
                 getDriver().findElement(By.xpath("(//table[@role='grid'])[6]//tr[3]/td[1]")).click();
             }
         }
@@ -27,15 +24,15 @@ public class DataTableSelectionPage {
 
     // Refactored, improved version:
     public void selectCheckboxByName(String nameToSelect) {
-        List<WebElement> rows = getDriver().findElements(checkboxNames);
-        int nameRow = 1; // Row index starts from 1
+        List<WebElement> names = getDriver().findElements(checkboxNames);
+        int checkboxRow = 1; // Row index starts from 1
 
-        for (WebElement nameElement : rows) {
+        for (WebElement nameElement : names) {
             if (nameElement.getText().equals(nameToSelect)) {
-                getDriver().findElement(By.xpath("(//table[@role='grid'])[6]//tr[" + nameRow + "]/td[1]")).click();
+                getDriver().findElement(By.xpath("(//table[@role='grid'])[6]//tr[" + checkboxRow + "]/td[1]")).click();
                 return;
             }
-            nameRow++;
+            checkboxRow++;
         }
         throw new NoSuchElementException("No row found with the name: " + nameToSelect);
     }
