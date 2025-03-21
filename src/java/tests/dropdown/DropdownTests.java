@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static base.PageInitializer.dropdownPage;
 import static base.PageInitializer.homePage;
 import static org.testng.Assert.*;
 

@@ -39,7 +39,7 @@ public class BrowserManager {
         return driver;
     }
 
-//    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void quitBrowser() {
         if (driver != null) {
             driver.quit();

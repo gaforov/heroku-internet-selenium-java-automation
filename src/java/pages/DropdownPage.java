@@ -11,7 +11,6 @@ import static base.BrowserManager.getDriver;
 public class DropdownPage {
     private final By dropdown = By.id("dropdown");
 
-
     public void selectFromDropdown(String option) {
         findDropdownElement().selectByVisibleText(option);
     }

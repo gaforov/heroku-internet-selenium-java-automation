@@ -6,12 +6,13 @@ import static base.BrowserManager.getDriver;
 
 
 public class LoginPage {
-    // Web Elements
+    // Web Element Locators
     private final By usernameField = By.id("username");
     private final By passwordField = By.id("password");
     private final By loginButton = By.className("radius");
 
 
+    // Methods
     public void setUsername(String username) {
         getDriver().findElement(usernameField).sendKeys(username);
     }

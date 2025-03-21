@@ -8,6 +8,7 @@ public class PageInitializer {
     public static HomePage homePage;
     public static DropdownPage dropdownPage;
     public static DataTableSelectionPage dataTableSelectionPage;
+    public static AlertsPage alertsPage;
 
 
     public static void initializePage() {
@@ -16,5 +17,6 @@ public class PageInitializer {
         homePage = new HomePage();
         dropdownPage = new DropdownPage();
         dataTableSelectionPage = new DataTableSelectionPage();
+        alertsPage = new AlertsPage();
     }
 }
